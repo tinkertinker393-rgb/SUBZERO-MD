@@ -1,4 +1,4 @@
-name: SUBZERO-MD-DEPLOY
+name: ELIAKIM-MD-DEPLOY
 on:
   workflow_dispatch:
 jobs:
@@ -121,7 +121,7 @@ jobs:
           echo "Preparing to restart workflow at $(date)"
           sleep 30
           curl -X POST \
-            -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
+            -H "Authorization: Bearer ${{ secrets.MILA }}" \
             -H "Accept: application/vnd.github.v3+json" \
             https://api.github.com/repos/${{ github.repository }}/actions/workflows/deploy.yml/dispatches \
             -d '{"ref":"${{ github.ref_name }}"}'
